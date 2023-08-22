@@ -1,13 +1,8 @@
 {
-  "extends": [
-    "./tsconfig.json"
-  ],
+  "extends": ["./tsconfig.json"],
   "compilerOptions": {
     "composite": true,
-    "types": [
-      "node",
-      "vitest"
-    ],
+    "types": ["node"],
     "resolveJsonModule": true,
     "allowJs": true
   },
@@ -15,5 +10,6 @@
     "./scripts",
     "./vite.config.ts",
     "./package.json",
+    "./package-lock.json"
   ]
 }
