@@ -13,6 +13,7 @@ export default defineConfig({
     },
   },
   test: {
+    passWithNoTests: true,
     browser: {
       enabled: true,
       headless: true,
