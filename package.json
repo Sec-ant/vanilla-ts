@@ -36,6 +36,9 @@
   },
   "license": "MIT",
   "config": {},
+  "publishConfig": {
+    "provenance": true
+  },
   "scripts": {
     "dev": "vite",
     "lint": "eslint . --ext .ts",
@@ -47,11 +50,13 @@
     "test": "vitest",
     "test:ui": "vitest --ui",
     "preview": "vite preview",
-    "prepublishOnly": "npm run build",
     "ncu": "npx npm-check-updates -u",
     "postncu": "npm i"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.7.1",
+    "@commitlint/config-conventional": "^17.7.0",
+    "@semantic-release/git": "^10.0.1",
     "@typescript-eslint/eslint-plugin": "^6.5.0",
     "@typescript-eslint/parser": "^6.5.0",
     "@vitest/browser": "^0.34.3",
@@ -61,6 +66,7 @@
     "npm-check-updates": "^16.13.2",
     "playwright": "^1.37.1",
     "prettier": "^3.0.3",
+    "semantic-release": "^21.1.1",
     "typescript": "^5.2.2",
     "vite": "^4.4.9",
     "vitest": "^0.34.3"
