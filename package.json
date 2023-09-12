@@ -51,6 +51,7 @@
     "test": "vitest",
     "test:ui": "vitest --ui",
     "preview": "vite preview",
+    "prepublishOnly": "npm run build",
     "ncu": "npx npm-check-updates -u",
     "postncu": "npm i"
   },
