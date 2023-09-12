@@ -37,7 +37,8 @@
   "license": "MIT",
   "config": {},
   "publishConfig": {
-    "provenance": true
+    "provenance": true,
+    "access": "public"
   },
   "scripts": {
     "dev": "vite",
