@@ -2,7 +2,7 @@
   "name": "@sec-ant/vanilla-ts",
   "description": "A Vite vanilla-ts template for browser es modules",
   "private": false,
-  "version": "0.0.2",
+  "version": "0.0.3",
   "type": "module",
   "files": [
     "./dist"
