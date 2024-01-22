@@ -1,1 +1,0 @@
-# @sec-ant/vanilla-ts
