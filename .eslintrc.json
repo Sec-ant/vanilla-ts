@@ -13,9 +13,10 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["@typescript-eslint"],
+  "plugins": ["@typescript-eslint", "import"],
   "ignorePatterns": ["node_modules", "dist"],
   "rules": {
-    "curly": "error"
+    "curly": "error",
+    "import/extensions": ["error", "ignorePackages", { "ts": "never" }]
   }
 }
