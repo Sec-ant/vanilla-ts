@@ -1,12 +1,10 @@
 {
-  "name": "@sec-ant/vanilla-ts",
+  "name": "vanilla-ts",
   "description": "A Vite vanilla-ts template for building es/cjs/iife modules",
   "private": false,
   "version": "0.1.0",
   "type": "module",
-  "files": [
-    "./dist"
-  ],
+  "files": ["./dist"],
   "main": "./dist/cjs/index.js",
   "module": "./dist/es/index.js",
   "exports": {
@@ -43,14 +41,16 @@
     "access": "public"
   },
   "scripts": {
-    "prepare": "husky install",
-    "bump": "bumpp",
+    "update-hooks": "simple-git-hooks",
+    "changeset": "changeset",
+    "bump": "changeset version 2>/dev/null | grep . && npm i",
     "dev": "vite",
-    "lint": "eslint . --ext .ts",
+    "lint": "biome lint .",
     "type-check": "tsc --noEmit --emitDeclarationOnly false",
-    "format": "prettier . --write",
+    "format": "biome format . --write",
+    "check": "biome check --apply .",
     "clear:dist": "rimraf dist",
-    "prebuild": "npm run lint && npm run type-check && npm run format && npm run clear:dist",
+    "prebuild": "npm run check && npm run type-check && npm run clear:dist",
     "build:es": "vite build",
     "build:cjs": "tsx ./scripts/build-cjs.ts",
     "build:iife": "tsx ./scripts/build-iife.ts",
@@ -62,29 +62,26 @@
     "test:ui": "vitest --ui",
     "preview": "vite preview",
     "prepublishOnly": "npm run build",
-    "ncu": "npx npm-check-updates --filterVersion \"/^[~^]/\" -u",
-    "postncu": "npm i"
+    "ncu": "npx ncu",
+    "postncu": "npm i",
+    "bump-biome": "npm i @biomejs/biome@latest --save-exact"
   },
   "devDependencies": {
-    "@commitlint/cli": "^18.4.4",
-    "@commitlint/config-conventional": "^18.4.4",
-    "@typescript-eslint/eslint-plugin": "^6.19.0",
-    "@typescript-eslint/parser": "^6.19.0",
-    "@vitest/coverage-istanbul": "^1.2.1",
-    "@vitest/ui": "^1.2.1",
+    "@biomejs/biome": "^1.5.3",
+    "@changesets/cli": "^2.27.1",
+    "@commitlint/cli": "^18.6.0",
+    "@commitlint/config-conventional": "^18.6.0",
+    "@vitest/coverage-istanbul": "^1.2.2",
+    "@vitest/ui": "^1.2.2",
     "concurrently": "^8.2.2",
-    "eslint": "^8.56.0",
-    "eslint-plugin-import": "^2.29.1",
-    "husky": "^8.0.3",
     "lint-staged": "^15.2.0",
-    "npm-check-updates": "^16.14.12",
+    "npm-check-updates": "^16.14.14",
     "prettier": "^3.2.4",
-    "prettier-plugin-jsdoc": "^1.3.0",
-    "prettier-plugin-organize-imports": "^3.2.4",
     "rimraf": "^5.0.5",
+    "simple-git-hooks": "^2.9.0",
     "tsx": "^4.7.0",
     "typescript": "^5.3.3",
     "vite": "^5.0.12",
-    "vitest": "^1.2.1"
+    "vitest": "^1.2.2"
   }
 }

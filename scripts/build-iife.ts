@@ -1,5 +1,5 @@
 import { rimraf } from "rimraf";
-import { LibraryOptions, build } from "vite";
+import { type LibraryOptions, build } from "vite";
 import viteConfig from "../vite.config.js";
 
 async function buildIife() {
