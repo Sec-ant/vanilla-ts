@@ -2,6 +2,8 @@
 *.ts
 *.cjs
 *.mjs
+*.cts
+*.mts
 *.d.cts
 *.d.mts
 *.jsx
